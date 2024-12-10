@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ececff;
+    color: #000;
+    flex-grow: 1;
+}
+
+/* Header Styles */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #007bff;
+    align-items: baseline;
+    min-height: 50px;
+}
+
+.name :hover{
+    color: red;
+    cursor: pointer;
+}
+
+.header-main .name,a,span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    background-color: red;
+}
+
+.nav .username, 
+.nav .logout-button {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.registerPage {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: xxx-large;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 5;
+}
+
+.registerFeld {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.registerFeld input{
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.registerFeld p{
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.registerPage button{
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.registerPage button:hover{
+    background-color: #333;
+}

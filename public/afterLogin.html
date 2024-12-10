@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Now RealTime Conferencing</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/afterLogin.css">
+    <script>src="script.js"</script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main"> 
+        <div class="name">
+            <a href="joinPage.html" id="name" onclick="enterRoom('create')">ConnectNow</a>
+        </div>
+        <nav class="nav">
+            <span id="username" style="display: none;"></span>
+            <a href="index.html" id="abmeldeButton" onclick="logout()">Abmelden</a>
+        </nav>
+    </header>
+    <!-- Raum-Erstellen/Beitreten-Seite -->
+    <div class="afterLogin">
+        <div class="body-left">
+            <h1>Willkommen</h1>
+            <div>
+                <span id="usernameUnterWilkommen"></span>
+            </div>
+        </div>
+        <div class="body-right">
+            <div class="login-container">
+                <a href="createPage.html"><button>Raum-Erstellen</button></a>
+                <a href="joinPage.html"><button>Raum-Beitreten</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Zeige den Benutzernamen beim Laden der Seite
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username"); // Lese den Namen aus localStorage
+            if (username) {
+                document.getElementById("usernameUnterWilkommen").textContent = `${username}`;
+                document.getElementById("username").textContent = username;
+                document.getElementById("username").style.display = "inline";
+            }
+        });
+    </script>
+</body>
+</html>

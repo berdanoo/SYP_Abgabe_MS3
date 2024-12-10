@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script src="socket.io/socket.io.js"></script>
+        <script src="modules/mediasoupclient.min.js"></script>
+        <script src="modules/EventEmitter.min.js"></script>
+      
+        <script src="RoomClient.js"></script>
+        <script src="roomPage.js"></script>
+
+      
+    </head>
+    <body>
+            <!-- Header -->
+    <header class="header-main"> 
+        <div class="name">
+            <a href="createPage.html">ConnectNow</a>
+        </div>
+        <nav class="nav">
+            <span class="username"></span>
+        </nav>
+    </header>
+        <script>
+             document.addEventListener("DOMContentLoaded", function () {
+
+
+            
+            const startVideoButton = document.getElementById('startVideoButton');
+            const stopVideoButton = document.getElementById('stopVideoButton');
+
+                const roomID= localStorage.getItem("roomID")
+                const userID= localStorage.getItem("userID");
+                joinRoom(userID,roomID)
+        });
+        </script>
+
+
+        <div class="container">
+            <div class="leftside">
+                <div class="TeilnehmerListe">
+                    <h2>Teilnehmer-Liste</h2>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p>4</p>
+                            <p>5</p>
+                            <p>6</p>
+                            <p>7</p>
+                            <p>Hasan</p>
+                </div>
+
+                <div class="chat-section">
+                    
+                    <h2>Chatbereich</h2>
+                    <div id="chatBox" class="chat-box">
+                        <!-- Chat-Inhalte -->
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chatMessage" placeholder="Nachricht eingeben" onkeydown="if (event.key === 'Enter') sendMessage()">
+                        <button onclick="sendMessage()">➤</button>
+                    </div>
+                </div>
+
+            </div>
+    <div class="right">
+            <div id="videoMedia" class="hidden containers">
+                <div id="localMedia">
+                    <!--Hier ist Localvideo drin-->
+
+                </div>
+                <div id="remoteVideos">
+                </div>
+                <div id="remoteAudios"></div>
+                    <!--Hier ist remoteVideo drin-->
+            </div>
+
+            <div id="control" class="hidden">
+                <br />
+            
+                <button
+                    id="startVideoButton"
+                    class="hidden"
+                    onclick="rc.produce(RoomClient.mediaType.video, videoSelect.value)">
+                    Open video
+                </button>
+                <button id="stopVideoButton" class="hidden" onclick="rc.closeProducer(RoomClient.mediaType.video)">Close video</button>
+                <br /><br />
+                <div id="devicesList" class="hidden">
+                    
+                    Video:
+                    <select id="videoSelect" class="form-select" style="width: auto"></select>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+        
+    </body>
+
+ 
+</html>

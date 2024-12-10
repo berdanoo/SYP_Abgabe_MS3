@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ececff;
+    color: #000;
+}
+
+/* Header Styles */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #007bff;
+    align-items: baseline;
+    min-height: 50px;
+}
+
+.name :hover{
+    color: red;
+    cursor: pointer;
+}
+
+.header-main .name,a,span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+}
+
+.nav .username, 
+.nav #abmeldeButton {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.afterLogin{
+    max-height: calc(100vh - 50px);
+    display: flex;
+}
+.body-left{
+    background-color: #f0f4ff;
+    flex: 1; /* Füllt den verfügbaren Platz horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    align-items: center;
+    font-size: xxx-large;  
+    font-weight: bold;
+}
+.body-left h1 {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+#usernameUnterWilkommen {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    display: flex; /* Flexbox aktivieren */
+    flex-wrap: wrap; /* Zeilenumbruch aktivieren */
+    justify-content: center; /* Optional: Zentriere den Text */
+    max-width: 100%; /* Passt sich der verfügbaren Breite an */
+    overflow-wrap: break-word; /* Umbruch bei langen Wörtern */
+    text-align: center; /* Zentriere den Text innerhalb der Zeilen */
+    padding: 10px; /* Optional: Abstand zum Rand */
+    word-break: break-word; /* Alternative für alte Browser */
+}
+
+
+.body-right {
+    background-color: #e0e4ff;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+    text-align: center;
+    flex-wrap: wrap;
+    
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    min-height: 150px;
+    min-width: 250px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons Styling */
+.login-container button{
+
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+}
+/* Hover-Effekt */
+.login-container button:hover {
+    background-color: #444; /* Dunklere Hintergrundfarbe beim Hover */
+}

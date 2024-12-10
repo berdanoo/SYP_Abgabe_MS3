@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Now RealTime Conferencing</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="script.js" ></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main"> 
+        <div class="name">
+            <a href="afterLogin.html" id="name">ConnectNow</a>
+        </div>
+        <nav class="nav">
+            <span id="username" style="display: none;"></span>
+            <a href="index.html" id="abmeldeButton" onclick="logout()" style="display: none;">Abmelden</a>
+        </nav>
+    </header>
+
+    <!-- Registrierungsseite -->
+    <div class="registerPage">
+        <h2>Registrieren</h2>
+        <div class="registerFeld">
+            <p>Benutzername</p>
+            <input id="usernameInputFeldReg" type="text" placeholder="Benutzername eintippen...">
+            <p>Email</p>
+            <input id="registerMail" type="email" placeholder="E-Mail">
+            <p>Passwort</p>
+            <input id="registerPass" type="password" placeholder="Passwort">
+            <a><button onclick="registerUser()">Registrieren</button></a> <!-- Entfernen von verlinkung zu login page-->
+        </div>
+    </div>
+</body>
+</html>

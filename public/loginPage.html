@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Now RealTime Conferencing</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main"> 
+        <div class="name">
+            <a href="afterLogin.html" id="name">ConnectNow</a>
+        </div>
+        <nav class="nav">
+            <span id="username" style="display: none;"></span>
+            <a href="index.html" id="abmeldeButton" onclick="logout()" style="display: none;">Abmelden</a>
+        </nav>
+    </header>
+    <!--Anmelden (Startseite) in den User -->
+    <div class="loginPage">
+        <h2>Anmelden</h2>
+        
+        <div class="loginFeld">
+                <p>Benutzername</p>
+                <input id="usernameInputFeld" type="text" placeholder="Benutzername eintippen..." name="username">
+                <p>Email</p>
+                <input id="loginMail" type="email" placeholder="E-Mail" name="loginMail">
+                <p>Passwort</p>
+                <input id="loginPass" type="password" placeholder="Passwort" name="passwort">
+                <a ><button  onclick="loginUser()">Login</button></a>
+             </form>
+        </div>
+    </div>
+</body>
+</html>

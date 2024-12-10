@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Now RealTime Conferencing</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/join.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main"> 
+        <div class="name">
+            <a href="roomPage.html" id="name">ConnectNow</a>
+        </div>
+        <nav class="nav">
+            <span id="username"></span>
+            <a href="index.html" id="abmeldeButton" onclick="logout()" style="display: none;">Abmelden</a>
+        </nav>
+    </header>
+
+    <!-- Raum-Beitreten-Seite -->
+    <div class="joinPage">
+        <div class="body-left">
+            <h1>Raum beitreten</h1>
+        </div>
+        <div class="body-right">
+            <div class="creatingContainer">
+                <p>Raum ID</p>
+                <input id="roomID" type="text" placeholder="Raum ID">
+                <a href="roomPage.html"><button onclick="enterRoom('join')">Raum Beitreten</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Zeige den Benutzernamen beim Laden der Seite
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = getName(); // Lese den Namen aus localStorage
+            if (username) {
+                document.getElementById("username").textContent = username;
+                document.getElementById("username").style.display = "inline";
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ececff;
+    color: #000;
+}
+
+/* Header Styles */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #007bff;
+    align-items: baseline;
+    min-height: 50px;
+}
+
+.name :hover{
+    color: red;
+    cursor: pointer;
+}
+
+.header-main .name,a,span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 50px;
+    background-color: red;
+}
+
+.nav .username, 
+.nav .logout-button {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Page Layout */
+.home-page{
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 50px); /* Höhe der Seite abzüglich der Header-Höhe */
+    flex-direction: row; /* Damit die beiden Bereiche nebeneinander stehen */
+    background-color: #007bff;
+}
+
+.body-left{
+    background-color: #f0f4ff;
+    flex: 1; /* Füllt den verfügbaren Platz horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:calc(100vh - 50px); /* Stellt sicher, dass der Block die gesamte Höhe einnimmt */
+    font-size: xxx-large;  
+    font-weight: bold;
+}
+
+.body-right {
+    background-color: #e0e4ff;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
+    text-align: center;
+    flex-wrap: wrap;
+    
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    min-height: 150px;
+    min-width: 250px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons Styling */
+.login-container button{
+
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+}
+
+/* Hover-Effekt */
+.login-container button:hover {
+    background-color: #444; /* Dunklere Hintergrundfarbe beim Hover */
+}
+
+
+/*
+
+
+
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.header-main {
+    min-height: 60px;
+    background-color: black;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.name{
+    font-size: 24px;
+    background-color: yellow;
+    color: #007bff;
+    font-weight: bold;
+}
+.name :hover {
+    color: red;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav #username {
+    color: white;
+    margin-right: 20px;
+    background-color: dimgrey;
+    padding: 10px;
+    border-radius: 70%;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    color: #007bff;
+}
+
+#homePage {
+    height: calc(100vh - 60px);
+    display: flex;
+}
+.body-left {
+    background-color: #f0f4ff;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-left h1 {
+    font-size: 50px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.body-right {
+    background-color: #e0e4ff;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container, .creatingContainer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.login-container button{
+    margin: 10px 0;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: -webkit-fill-available;
+}
+
+.login-container button:hover{
+    background-color: #333;
+}
+    */

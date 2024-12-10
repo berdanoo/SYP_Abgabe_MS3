@@ -1,0 +1,224 @@
+/* Allgemeine Stile */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c; /* Dunkles Schwarz */
+  color: #f4f4f4; /* Helles Grau */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header */
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000000; /* Tiefschwarz */
+  color: #ffffff; /* Weiß */
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header-main .name a {
+  color: #007bff; /* Leuchtendes Blau */
+  text-decoration: none;
+}
+
+.header-main .name a:hover {
+  text-decoration: underline;
+  color: #ff3333;
+  cursor: pointer;
+}
+
+.header-main .username {
+  background-color: #ff3333; /* Intensives Rot */
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex: 1;
+  background-color: #1c1c1c; /* Dunkles Schwarz */
+  height: calc(100% - 60px); /* Subtrahiere die Höhe des Headers */
+}
+
+/* Linke Seite */
+.leftside {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 300px; /* Fixe Breite */
+  background-color: #2e2e2e; /* Dunkles Grau */
+  color: #f4f4f4;
+  padding: 20px;
+  border-right: 2px solid #3c3c3c; /* Mittelgrau */
+  height: 100%;
+}
+
+.TeilnehmerListe {
+  text-align: center;
+  background-color: #007bff; /* Leuchtendes Blau */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.TeilnehmerListe h2 {
+  margin: 0 0 10px;
+  color: #ffffff; /* Weiß */
+}
+
+.TeilnehmerListe p {
+  font-size: 1rem;
+  margin: 5px 0;
+  font-style: italic;
+  color: #e3e3e3; /* Helles Grau */
+}
+
+/* Chat-Sektion */
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.chat-section h2 {
+  text-align: center;
+  background-color: #2e2e2e; /* Dunkles Grau */
+  padding: 10px;
+  border-bottom: 1px solid #3c3c3c; /* Mittelgrau */
+  font-size: 1.2rem;
+  color: #f4f4f4; /* Helles Grau */
+}
+
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  background-color: #3c3c3c; /* Mittelgrau */
+  border: 1px solid #2e2e2e; /* Dunkleres Grau */
+  overflow-y: auto;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.5);
+  color: #f4f4f4; /* Helles Grau */
+}
+
+.chat-box div {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #007bff; /* Blau */
+  font-size: 1rem;
+  color: #ffffff; /* Weiß */
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #2e2e2e; /* Dunkles Grau */
+  border-top: 1px solid #3c3c3c; /* Mittelgrau */
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #4a4a4a; /* Hellgrau */
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-right: 10px;
+  background-color: #1c1c1c; /* Schwarz */
+  color: #f4f4f4; /* Helles Grau */
+}
+
+.chat-input button {
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #ff3333; /* Intensives Rot */
+  color: #ffffff; /* Weiß */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+  background-color: #e60000; /* Dunkleres Rot */
+}
+
+/* Rechte Seite */
+.right {
+  display: flex;
+  flex-direction: column; /* Vertikale Anordnung */
+  flex: 1; /* Nimmt den restlichen Platz ein */
+  padding: 20px;
+  height: 100%;
+}
+
+#videoMedia {
+  flex: 1; /* Passt sich der verfügbaren Höhe an */
+  display: flex;
+  padding: 10px;
+  background-color: #2e2e2e; /* Dunkles Grau */
+  border: 1px solid #4a4a4a; /* Hellgrau */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#videoMedia video {
+
+  max-width: 600px;
+  max-height: 1200px;
+  margin-right: 2px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #4a4a4a; /* Hellgrau */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Steuerung */
+#control {
+  background-color: #3c3c3c; /* Mittelgrau */
+  padding: 20px;
+  border-top: 1px solid #2e2e2e; /* Dunkleres Grau */
+  text-align: center;
+}
+
+#control button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff; /* Blau */
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#control button:hover {
+  background-color: #0056b3; /* Dunkleres Blau */
+}
+
+#control select {
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #4a4a4a; /* Hellgrau */
+  background-color: #2e2e2e; /* Dunkles Grau */
+  color: #ffffff; /* Weiß */
+}
