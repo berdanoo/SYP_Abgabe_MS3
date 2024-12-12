@@ -1,19 +1,21 @@
 # Mediasoup video conferencing
 
-Example website for multi-party video/audio/screen conferencing using mediasoup. This project is intended to better understand how mediasoup works with a simple example.
+Diese Projekt ist eine Abbgabe für den Kunden. Es soll eine Website für Multi-Party-Video-/Audio-/Bildschirmkonferenzen mit Mediasoup und SFU sein
 
-This project is featured on the [mediasoup examples page](https://mediasoup.org/documentation/examples/) with many other examples. Checkout mediasoup at [mediasoup.org](https://mediasoup.org)
 
-#Conditions
--pleas make surre that you have node version `22.11.0 `
--you installed node.js
 
-# Running the code
--   run `npm install` and  then `npm start` to run the application. Then open your browser at `https://localhost:3000` or your own defined port/url in the config file.
--   (optional) edit the `src/config/Serverconfig.js` file according to your needs and replace the `ssl/key.pem ssl/cert.pem` certificates with your own.
+# Voraussetzungen
+Sie haben npm installiert.
+Sie haben Node.js installiert.
 
-# Deployment
+# Code ausführen
+-   Führen Sie `npm install` aus und danach `npm start`, um die Anwendung zu starten. Öffnen Sie dann Ihren Browser unter `https://<lokaleIpAdresse>:3000` oder einer von Ihnen im Konfigurationsfile definierten Port/URL.
+-   (optional) Bearbeiten Sie die Datei `src/configs/Serverconfig.js` nach Ihren Bedürfnissen und ersetzen Sie die Zertifikate `ssl/key.pem ssl/cert.pem` durch Ihre eigenen.
 
--   in `config.js` replace the `announcedIP` with your public ip address of the server and modify the port you want to serve it in.
--   add firewall rules of the port of the webpage (default 3016) and the rtc connections (default udp 10000-10100) for the machine.
+# Bereitstellung
+
+-   Ersetzen Sie in der Datei `config.js` die `announcedIP` durch die öffentliche IP-Adresse Ihres Servers und passen Sie den Port an, über den Sie den Dienst bereitstellen möchten.
+
+
+-  Fügen Sie Firewall-Regeln für den Port der Webseite (Standard 3016) und die RTC-Verbindungen (Standard UDP 10000-10100) für die Maschine hinzu.
 
