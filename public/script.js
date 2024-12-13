@@ -11,6 +11,7 @@ const API_URL = "https://localhost:3000/api";
 
 // Benutzer registrieren
 async function registerUser() {
+    console.log("In der RegisterUser methode")
     const loginName = document.getElementById("usernameInputFeldReg").value;
     const passwort = document.getElementById("registerPass").value;
 
@@ -60,7 +61,6 @@ async function loginUser() {
         }
     } catch (error) {
         console.error("Fehler bei der Anmeldung:", error);
-    }
 }
 
 // Raum erstellen oder beitreten
@@ -134,12 +134,4 @@ function logout() {
     window.location.href = "index.html";
 }
 
-
-
-
-
-
-
-
-
-
+}

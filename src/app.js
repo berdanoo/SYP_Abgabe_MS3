@@ -1,6 +1,9 @@
 
 //Importiere die benötigten Modul
 const express = require('express')
+// Um Anfragen von anderen Domains zu erhalten
+const cors = require('cors');
+
 const app = express()
 const https = require('httpolyglot')
 const fs = require('fs')
@@ -11,6 +14,18 @@ const Room = require('./classes/Room')
 const Peer = require('./classes/Peer')
 
 
+// Einbinden der FireStore Db
+const admin = require('firebase-admin');
+
+// Initialisieren von SDK
+const serviceAccount = require('./configs/prototypconnectnow-firebase-adminsdk-p6sqx-c2f280b6a7.json')
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount), // Authentifizierung mit Service Account
+});
+
+// Firestore-Instanz
+const db = admin.firestore();
 
 
 // SSL-Zertifikat und Schlüssel laden
@@ -36,6 +51,80 @@ const io = require('socket.io')(httpsServer)
 // Express konfigurieren, um statische Dateien bereitzustellen
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(express.json());
+app.use(cors());
+
+
+app.post('/api/users/register', async (req, res) => {
+    const { loginName, passwort } = req.body;
+
+    // Eingabedaten prüfen
+    if (!loginName || !passwort) {
+        return res.status(400).json({ error: 'loginName und passwort sind erforderlich' });
+    }
+
+    try {
+        // Prüfen, ob der Benutzername bereits existiert
+        const usersRef = db.collection('users');
+        const querySnapshot = await usersRef.where('loginName', '==', loginName).get();
+
+        if (!querySnapshot.empty) {
+            return res.status(400).json({ error: 'Benutzername existiert bereits' });
+        }
+
+        // Benutzer in Firestore speichern
+        const userRef = usersRef.doc();
+        await userRef.set({
+            loginName: loginName,
+            passwort: passwort, // Hinweis: Hash-Passwörter verwenden!
+            createdAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+
+        res.status(200).json({ message: 'Registrierung erfolgreich', userid: userRef.id });
+    } catch (error) {
+        console.error('Fehler bei der Registrierung:', error);
+        res.status(500).json({ error: 'Fehler bei der Registrierung des Benutzers' });
+    }
+});
+
+
+app.post('/api/users/login', async (req, res) => {
+    const { loginName, passwort } = req.body;
+
+    // Eingabedaten prüfen
+    if (!loginName || !passwort) {
+        return res.status(400).json({ error: 'loginName und passwort sind erforderlich' });
+    }
+
+    try {
+        // Benutzer mit dem angegebenen Benutzernamen abrufen
+        const usersRef = db.collection('users');
+        const querySnapshot = await usersRef.where('loginName', '==', loginName).get();
+
+        // Prüfen, ob der Benutzer existiert
+        if (querySnapshot.empty) {
+            return res.status(401).json({ error: 'Benutzer nicht gefunden oder Passwort falsch' });
+        }
+
+        // Es gibt genau einen Benutzer mit diesem Benutzernamen
+        const userDoc = querySnapshot.docs[0]; // Erstes (und einziges) Dokument
+        const userData = userDoc.data();
+
+        // Passwort vergleichen
+        if (userData.passwort === passwort) { // Hinweis: Hash-Passwörter verwenden!
+            return res.status(200).json({
+                message: 'Login erfolgreich',
+                userid: userDoc.id, // Benutzer-ID zurückgeben
+                username: userData.loginName
+            });
+        } else {
+            return res.status(401).json({ error: 'Benutzer nicht gefunden oder Passwort falsch' });
+        }
+    } catch (error) {
+        console.error('Fehler beim Login:', error);
+        res.status(500).json({ error: 'Fehler beim Login' });
+    }
+});
+
 
 
 // Server starten und auf Konfigurations-Port lausche
