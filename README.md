@@ -43,5 +43,7 @@ Sie haben Node.js installiert.
 
 - const db = require("./firebase"); # pfad der Datei in der die obige config definiert wurde
 
+Damit wird gewährleistet das Nutzer eigne Daten dann über Variablen "db" Speichern/Löschen können.
+
 
 
