@@ -19,3 +19,28 @@ Sie haben Node.js installiert.
 
 -  Fügen Sie Firewall-Regeln für den Port der Webseite (Standard 3016) und die RTC-Verbindungen (Standard UDP 10000-10100) für die Maschine hinzu.
 
+# Anbindung von Firestore 
+
+-  Link für Console https://console.firebase.google.com navigieren.  Projekt neu erstellen / bereits existierendes Projekt auswählen
+-  Gehe zu Einstellungen → Dienstkonten
+-  Klicke auf Neuen privaten Schlüssel generieren → Die JSON-Datei speichern
+
+# Firebase in dein Node.js-Projekt einbinden
+# Erstelle eine Datei firebase.js:
+-  const admin = require("firebase-admin");
+const serviceAccount = require("./pfad/zu/deiner/service-account.json"); # Darauf achten das Pfad korrekt zum erzeugten private key führt
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+const db = admin.firestore();
+
+module.exports = db;
+
+# Erstelle/hinzufügen eine Datei index.js und füge folgendes ein:
+
+- const db = require("./firebase"); # pfad der Datei in der die obige config definiert wurde
+
+
+
