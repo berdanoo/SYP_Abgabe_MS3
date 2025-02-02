@@ -28,15 +28,16 @@ Sie haben Node.js installiert.
 # Firebase in dein Node.js-Projekt einbinden
 # Erstelle eine Datei firebase.js:
 -  const admin = require("firebase-admin");
-const serviceAccount = require("./pfad/zu/deiner/service-account.json"); # Darauf achten das Pfad korrekt zum erzeugten private key führt
+-  # Darauf achten das Pfad korrekt zum erzeugten private key führt
+-  const serviceAccount = require("./pfad/zu/deiner/service-account.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+- admin.initializeApp({
+ - credential: admin.credential.cert(serviceAccount)
+- });
 
-const db = admin.firestore();
+- const db = admin.firestore();
 
-module.exports = db;
+- module.exports = db;
 
 # Erstelle/hinzufügen eine Datei index.js und füge folgendes ein:
 
